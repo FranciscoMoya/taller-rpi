@@ -1,0 +1,23 @@
+% versiones alternativas de los comandos para facilitar la conversión a EPUB
+
+\usepackage{framed}
+
+\def\notamargen#1#2{
+  {
+  \parindent = 10pt
+  \begin{leftbar}
+    \vspace*{0.2cm}
+    \parbox{0.9\textwidth}{
+      \fbox{#1} \\[0.2cm]
+      \fontsize{8}{7.5} \selectfont #2
+    }
+    \vspace{0.3cm}
+  \end{leftbar}
+  }
+}
+
+\def\imagenmargen#1#2#3{
+  \imagenhere{#1}{0.3\textwidth}{#3}{#2}
+}
+
+\def\clearpage{}

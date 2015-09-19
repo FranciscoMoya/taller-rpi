@@ -1,0 +1,18 @@
+% \ac{IP}   default command: first time per chapter means \acf, then \acs
+% \acs{IP}  short: IP
+% \acl{IP}  large: Internet Protocol
+% \acf{IP}  full:  Internet Protocol (IP)
+% \acx{IP}  both:  IP (Internet Protocol)
+
+% \Acro defines the acronym and mark it as used so it never appears in "large" form
+
+\usepackage{relsize}  % provides textscale
+\newcommand{\textac}[1]{\textsc{\textscale{.85}{#1}}}
+
+\usepackage[printonlyused]{acronym}
+
+\renewcommand*{\acsfont}[1]{\textac{#1}} % fuente para la versión corta
+\renewcommand*{\acfsfont}[1]{#1}
+\renewcommand*{\acffont}[1]{#1}
+
+\renewcommand{\acf}[1]{\acs{#1}~(\acl{#1})\acused{#1}}

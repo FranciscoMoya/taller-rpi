@@ -1,0 +1,90 @@
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Listado}
+
+\usepackage{listingsutf8}
+
+\lstset{
+  escapeinside={((*}{*))},
+  inputencoding=utf8/latin1,
+  tabsize=4,
+  showspaces=false,
+  showtabs=false,
+  frame=b,
+  framerule=1pt,
+  aboveskip=0.5cm,
+  framextopmargin=3pt,
+  framexbottommargin=3pt,
+  framexleftmargin=18pt,
+  framesep=.4pt,
+  rulesep=.4pt,
+  rulesepcolor=\color{grisoscuro},
+  stringstyle=\ttfamily,
+  showstringspaces = false,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\color{gris},
+  keywordstyle=\bfseries,
+  numbers=left,
+  numbersep=6pt,
+  numberstyle=\color[cmyk]{0.43, 0.35, 0.35,0.01}\bfseries\scriptsize\ttfamily,
+  numberfirstline = true,
+  breaklines=true,
+  stepnumber=1,
+  backgroundcolor=\color{white},
+  xleftmargin=18pt,
+  framexrightmargin=0pt,
+  xrightmargin=0pt,
+  texcl=true
+}
+
+\lstnewenvironment{term}[1][]{
+  \interlineado{0.92}
+  \lstset{
+    escapeinside={((*}{*))},
+    language=,
+    basicstyle=\footnotesize\bf\ttfamily,
+    numbers=none,
+    xleftmargin=3.5pt,
+    frame=none,
+    breaklines=true,
+    framexleftmargin=3pt,
+    framexrightmargin=0pt,
+    backgroundcolor=\color{grisclaro},
+    #1,
+  }
+}{\interlineado{0.95}}
+%     frame=l,
+%     framexleftmargin=7pt}}
+
+
+
+\lstloadlanguages{C, Python}
+
+\lstdefinestyle{C}
+{language=C, }
+
+\lstdefinestyle{P}
+{language=Python, }
+
+\def\codigofuente#1#2#3#4{
+  \interlineado{#4}
+  \lstinputlisting[label=#3,caption=#2, style=C]{#1}
+  \interlineado{0.95}
+}
+
+%% Inserción de código fuente %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Uso: \code{lenguaje}{numero_primera_linea}{caption}{archivo_fuente}
+
+\def\code#1#2#3#4{
+  \lstinputlisting[language=#1, firstnumber=#2, caption=#3]{#4}
+}
+
+
+\lstdefinelanguage{Slice}{%
+  morekeywords=[2]{void, bool, byte, short, int, float, sequence, string,
+    dictionary, Object},
+  morekeywords=[3]{module, interface, struct, class, exception,
+    throws, extends, idempotent},
+  morekeywords=[4]{in, out},
+  morekeywords=[5]{include},
+  sensitive=false
+  }

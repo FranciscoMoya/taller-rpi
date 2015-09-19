@@ -1,0 +1,2 @@
+
+include ../common/latex.mk
